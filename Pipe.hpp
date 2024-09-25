@@ -13,12 +13,20 @@ namespace Sonar {
 		void SpawnBottomPipe();
 		void SpawnTopPipe();
 		void SpawnInvisiblePipe();
+		void SpawnScoringPipes();
 		void MovePipes(float dt);
 		void DrawPipes();
+		void RandomisePipeOffSet();
 
+		const std::vector<sf::Sprite>& GetPipeSprites() const;
+
+		std::vector<sf::Sprite>& GetScoringSprites();
 	private:
 		GameDataRef _data;
 		std::vector<sf::Sprite> pipeSprites;
+		std::vector<sf::Sprite> scoringPipes;
+		int _landHeight;
+		int _pipeSpawnYOffSet;
 	};
 }
 
